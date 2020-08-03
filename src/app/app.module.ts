@@ -13,7 +13,6 @@ import { SearchBarComponent } from './components/header/search-bar/search-bar.co
 import { ReactiveFormsModule } from '@angular/forms';
 import { ImageComponent } from './components/profile/image/image.component';
 import { PaginationComponent } from './components/profile-results/pagination/pagination.component';
-import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -31,11 +30,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule,
-    NgxSpinnerModule
+    ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
