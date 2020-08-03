@@ -72,6 +72,6 @@ export class GithubSearchService {
   }
 
   public getInfoByUrl(url: string): Observable<{}> {
-    return this.http.get(`${url}`, httpOptions);
+    return this.http.get(`${url}`);
   }
 }
