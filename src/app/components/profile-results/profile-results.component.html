@@ -1,0 +1,16 @@
+<ng-container *ngIf="!(isSearching | async); else searching">
+  <ng-container *ngIf="profileResults$ | async as users">
+    <div class="container">
+      <ng-container *ngFor="let user of users">
+        <app-profile [user]="user"></app-profile>
+      </ng-container>
+    </div>
+    <app-pagination [pagination]="pagination | async"></app-pagination>
+  </ng-container>
+</ng-container>
+
+<ng-template #searching>
+  <div class="container">
+  </div>
+</ng-template>
+

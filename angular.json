@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-github-thisdot"
+    }
+  },
+  "defaultProject": "ng-github-thisdot",
+  "cli": {
+    "analytics": "9500ee43-0ee1-4171-b039-766727c1ceb2"
+  }
 }

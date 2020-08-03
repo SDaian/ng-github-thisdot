@@ -1,0 +1,51 @@
+.card-container {
+  padding: 10px;
+  .principal-info {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .user {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.25;
+    margin-right: 5px;
+  }
+  .login-name {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    color: #666;
+  }
+  .other-info {
+    display: grid;
+    color: #24292e;
+    .email {
+      font-size: 12px;
+      a {
+        
+        text-decoration: none;
+        &:hover {
+          cursor: pointer;
+          color: blue;
+        }
+      }
+    }
+    .location, .follow-info, .repositories, .site {
+      font-size: 12px;
+    }
+    .site {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      span:hover {
+        cursor: pointer;
+        color: blue;
+      }
+    }
+    .bold {
+      font-weight: 600;
+    }
+  }
+}

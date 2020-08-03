@@ -1,0 +1,30 @@
+.container{
+  display: grid;
+  width: 95%;
+  grid-template-columns: 300px minmax(350px, 500px);
+  margin: 0 auto;
+  grid-template-rows: 80px;
+  align-items: center;
+  .menu {
+    display: grid;
+    grid-template-rows: 50px;
+    grid-template-columns: repeat(3, minmax(50px, 80px));
+    grid-gap: 10px;
+    .item {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        cursor: pointer;
+        background: #f7f7f7;
+        color: navy;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    grid-template-columns: auto;
+  }
+}

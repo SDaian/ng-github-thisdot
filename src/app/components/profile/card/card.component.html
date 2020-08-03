@@ -1,0 +1,31 @@
+<div class="card-container">
+  <div class="principal-info">
+    <span class="user">{{user.privacy?.name || "N/A"}}</span>
+    <span class="login-name">{{user.privacy?.login || "N/A"}}</span>
+  </div>
+  <div class="other-info">
+    <span *ngIf="user.privacy?.email" class="email">
+      <a href="mailto:{{user.privacy?.email}}">
+        {{user.privacy?.email}}
+      </a>
+    </span>
+    <span *ngIf="user.privacy.location" class="location">
+      {{user.privacy?.location}}
+    </span>
+    <div class="follow-info">
+      <span class="followers">
+        <span class="bold">{{user.privacy.followers}}</span> Followers
+      </span>
+      ·
+      <span class="following">
+        <span class="bold">{{user.privacy.following}}</span> Following
+      </span>
+    </div>
+    <div class="repositories">
+      <span class="bold">{{user.privacy.public_repos}}</span> Repositories
+    </div>
+    <div class="site">
+      <span>{{user.privacy.blog}}</span>
+    </div>
+  </div>
+</div>

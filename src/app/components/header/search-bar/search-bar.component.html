@@ -1,0 +1,8 @@
+<div class="form-container">
+  <form [formGroup]="formData" (ngSubmit)="onSubmit()" >
+    <input type="text" class="fortextbox" name="user" placeholder="Search by User" 
+      formControlName="user">
+  
+    <input type="submit" class="forsubmit" value="Search">
+  </form>
+</div>
