@@ -17,7 +17,7 @@ export class GithubSearchService {
   private isSearching = new BehaviorSubject<boolean>(false);
 
   private searchUsersEndpoint = `https://api.github.com/search/users?q=`;
-  private oAuthToken = `6063fcdfb43a31fd52de5a779957cc789fb533b2`;
+  private oAuthToken = `883af6a6c4ade42cc2e65a22fd9d7d9e367f3d27`;
   private usersPerPage = 10;
 
   constructor(private http: HttpClient) {}
