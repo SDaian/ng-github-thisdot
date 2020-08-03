@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BehaviorSubject, Observable, forkJoin, concat } from 'rxjs';
+import { BehaviorSubject, Observable, forkJoin, concat, of } from 'rxjs';
 import { map, flatMap } from 'rxjs/operators';
 
 import { GithubResponse } from '../models/response';
@@ -55,7 +55,6 @@ export class GithubSearchService {
       }),
       flatMap((response: GithubResponse) => {
         const userObservables: Observable<User>[] = response.items.map((user: User) => {
-          console.log(`getting data for ${user.followers_url}`);
           const privacyObservable = this.getInfoByUrl(user.url).pipe(
             map((privacy: Privacy) => {
               user.privacy = privacy;
@@ -67,7 +66,6 @@ export class GithubSearchService {
         return forkJoin(userObservables);
       })
     ).subscribe((response: User[]) => {
-      console.log(response);
       this.searchResults.next(response);
       this.isSearching.next(false);
     });

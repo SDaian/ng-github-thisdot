@@ -1,13 +1,19 @@
 <ng-container *ngIf="!(isSearching | async); else searching">
   <ng-container *ngIf="profileResults$ | async as users">
     <div class="container">
-      <ng-container *ngFor="let user of users">
-        <app-profile [user]="user"></app-profile>
+      <ng-container *ngIf="users.length; else noResults">
+        <ng-container *ngFor="let user of users">
+          <app-profile [user]="user"></app-profile>
+        </ng-container>
       </ng-container>
     </div>
     <app-pagination [pagination]="pagination | async"></app-pagination>
   </ng-container>
 </ng-container>
+
+<ng-template #noResults>
+  Nothing to see here :(
+</ng-template>
 
 <ng-template #searching>
   <ngx-spinner 

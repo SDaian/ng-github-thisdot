@@ -3,6 +3,6 @@
     <input type="text" class="fortextbox" name="user" placeholder="Search by User" 
       formControlName="user">
   
-    <input type="submit" class="forsubmit" value="Search">
+    <input type="submit" class="forsubmit" value="Search" [disabled]="!formData.valid">
   </form>
 </div>

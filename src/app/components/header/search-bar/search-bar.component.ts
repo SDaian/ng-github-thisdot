@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { GithubSearchService } from 'src/app/services/github-search.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { GithubSearchService } from 'src/app/services/github-search.service';
 export class SearchBarComponent{
 
   formData = new FormGroup({
-    user: new FormControl(''),
+    user: new FormControl('', [Validators.required, Validators.minLength(5)]),
   });
 
   constructor(private service: GithubSearchService) { }
