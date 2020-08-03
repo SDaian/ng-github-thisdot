@@ -12,7 +12,7 @@ import { GithubSearchService } from 'src/app/services/github-search.service';
 export class SearchBarComponent{
 
   formData = new FormGroup({
-    user: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    user: new FormControl('', [Validators.required, Validators.minLength(3)]),
   });
 
   constructor(private service: GithubSearchService) { }
