@@ -18,7 +18,7 @@ export class GithubSearchService {
   private isSearching = new BehaviorSubject<boolean>(false);
 
   private searchUsersEndpoint = `https://api.github.com/search/users?q=`;
-  private usersPerPage = 2;
+  private usersPerPage = 10;
 
   constructor(private http: HttpClient, private SpinnerService: NgxSpinnerService) {}
 
