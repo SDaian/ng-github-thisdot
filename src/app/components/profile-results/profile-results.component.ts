@@ -21,7 +21,6 @@ export class ProfileResultsComponent implements OnInit {
     this.profileResults$ = this.service.getSearchResults();
     this.isSearching = this.service.getIsSearching();
     this.pagination = this.service.getPagination();
-    this.service.getUsers('daian');
   }
 
   ngOnInit(): void {
