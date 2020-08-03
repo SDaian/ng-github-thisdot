@@ -6,6 +6,7 @@ import { map, flatMap } from 'rxjs/operators';
 import { GithubResponse } from '../models/response';
 import { User, Privacy } from '../models/user';
 import { Pagination } from '../models/pagination';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +18,9 @@ export class GithubSearchService {
   private isSearching = new BehaviorSubject<boolean>(false);
 
   private searchUsersEndpoint = `https://api.github.com/search/users?q=`;
-  private usersPerPage = 10;
+  private usersPerPage = 2;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private SpinnerService: NgxSpinnerService) {}
 
   public getSearchResults(): Observable<any[]> {
     return this.searchResults.asObservable();
@@ -35,6 +36,7 @@ export class GithubSearchService {
 
   public getUsers(userString: string, page: number = 1): void {
     this.isSearching.next(true);
+    this.SpinnerService.show();
     const httpOptions = {
       headers: new HttpHeaders({})
     };
